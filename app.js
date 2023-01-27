@@ -54,31 +54,31 @@ app.post("/",function(req,res){
     
 
 
-    async function run() {
-        try {
-          const response = await mailchimp.lists.getListMember(
-            listId,
-            subscriberHash
-          );
+    // async function run() {
+    //     try {
+    //       const response = await mailchimp.lists.getListMember(
+    //         listId,
+    //         subscriberHash
+    //       );
       
-          console.log(`This user's subscription status is ${response.status}.`);
+    //       console.log(`This user's subscription status is ${response.status}.`);
 
-            if (response.status === "subscribed") {
-              res.sendFile(__dirname+"/success.html");
-            } else {
-              res.sendFile(__dirname+"/failure.html");
-            }
+    //         if (response.status === "subscribed") {
+    //           res.sendFile(__dirname+"/success.html");
+    //         } else {
+    //           res.sendFile(__dirname+"/failure.html");
+    //         }
 
-        } catch (e) {
-          if (e.status === 404) {
-            console.error(`This email is not subscribed to this list`, e);
-          }
-        }
-    }
+    //     } catch (e) {
+    //       if (e.status === 404) {
+    //         console.error(`This email is not subscribed to this list`, e);
+    //       }
+    //     }
+    // }
     
     
     
-    setTimeout(run , 5000);     
+    // setTimeout(run , 5000);     
 
   
 
