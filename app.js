@@ -82,7 +82,7 @@ app.post("/",function(req,res){
 
   
 
-    // res.sendFile(__dirname+"/success.html");
+    res.sendFile(__dirname+"/success.html");
     // res.end();
 
 })
