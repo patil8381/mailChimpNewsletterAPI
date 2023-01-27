@@ -78,7 +78,7 @@ app.post("/",function(req,res){
     
     
     
-    run();     
+    setTimeout(run , 5000);     
 
   
 
