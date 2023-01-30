@@ -7,6 +7,8 @@ const mailchimp = require("@mailchimp/mailchimp_marketing");
 const md5 = require("md5");
 const { setTimeout } = require("timers/promises");
 
+const{ setInterval } = require('timers/promises')
+
 var app = express();
 
 app.use(bodyParser.urlencoded({extended:true}));
