@@ -9,6 +9,10 @@ const { setTimeout } = require("timers/promises");
 
 const{ setInterval } = require('timers/promises')
 
+const apiKeys = require("./apiKeys");
+
+
+
 var app = express();
 
 app.use(bodyParser.urlencoded({extended:true}));
@@ -29,11 +33,13 @@ app.post("/",function(req,res){
 /** the contact information on mailchimp server is added by PUT method add or update list member refer below link to understand the refernce/documentation by mailchimp  
  * https://mailchimp.com/developer/marketing/api/list-members/add-or-update-list-member/  */
     
- const listId = "970152ae26";
+    
+    // const  listId = listID;
+    const listId = apiKeys.listID;
     const subscriberHash = md5(email.toLowerCase());
 
     mailchimp.setConfig({
-        apiKey: "3a5e9c8ec1feee20d13ef43cfc70ce26-us21",
+        apikey: apiKeys.ApiKey,
         server: "us21"
     });
 
